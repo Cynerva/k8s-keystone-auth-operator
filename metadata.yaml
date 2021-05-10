@@ -1,0 +1,12 @@
+name: k8s-keystone-auth
+description: |
+  A k8s-keystone-auth operator for integrating kube-apiserver with keystone for auth.
+summary: |
+  A k8s-keystone-auth operator for integration kube-apiserver with keystone for auth.
+containers:
+  k8s-keystone-auth:
+    resource: k8s-keystone-auth-image
+resources:
+  k8s-keystone-auth-image:
+    type: oci-image
+    descrption: OCI image for k8s-keystone-auth
