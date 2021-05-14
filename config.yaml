@@ -1,0 +1,93 @@
+options:
+  authorization-policy:
+    type: string
+    description: |
+      Authorization policy for Keystone.
+
+      Optional.
+    default: |
+      [
+        {
+         "resource": {
+            "verbs": ["get", "list", "watch"],
+            "resources": ["*"],
+            "version": "*",
+            "namespace": "*"
+          },
+          "match": [
+            {
+              "type": "role",
+              "values": ["k8s-viewers"]
+            },
+            {
+              "type": "project",
+              "values": ["k8s"]
+            }
+          ]
+        },
+        {
+         "resource": {
+            "verbs": ["*"],
+            "resources": ["*"],
+            "version": "*",
+            "namespace": "default"
+          },
+          "match": [
+            {
+              "type": "role",
+              "values": ["k8s-users"]
+            },
+            {
+              "type": "project",
+              "values": ["k8s"]
+            }
+          ]
+        },
+        {
+         "resource": {
+            "verbs": ["*"],
+            "resources": ["*"],
+            "version": "*",
+            "namespace": "*"
+          },
+          "match": [
+            {
+              "type": "role",
+              "values": ["k8s-admins"]
+            },
+            {
+              "type": "project",
+              "values": ["k8s"]
+            }
+          ]
+        }
+      ]
+  keystone-ca:
+    type: string
+    description: |
+      TLS certificate for Keystone's Certificate Authority, used to verify the
+      connection to Keystone.
+
+      Optional.
+    default: ""
+  keystone-url:
+    type: string
+    description: |
+      URL for Keystone.
+
+      Required. If related to Keystone, this becomes optional.
+    default: ""
+  tls-server-cert:
+    type: string
+    description: |
+      TLS server certificate to use for the webhook endpoint.
+
+      Required. If related to a certificate authority, this becomes optional.
+    default: ""
+  tls-server-key:
+    type: string
+    description: |
+      TLS server key to use for the webhook endpoint.
+
+      Required. If related to a certificate authority, this becomes optional.
+    default: ""

@@ -10,3 +10,8 @@ resources:
   k8s-keystone-auth-image:
     type: oci-image
     descrption: OCI image for k8s-keystone-auth
+requires:
+  keystone-credentials:
+    interface: keystone-credentials
+  tls-certificates:
+    interface: tls-certificates
