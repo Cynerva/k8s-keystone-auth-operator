@@ -69,13 +69,8 @@ class K8sKeystoneAuthCharm(CharmBase):
         }
 
     def get_service_ip(self):
-        k8s_api = self.kubernetes.find_k8s_api(self.service_object, None)
-        service = k8s_api.read_namespaced_service(
-            namespace=self.service_object['metadata']['namespace'],
-            name=self.service_object['metadata']['name']
-        )
+        service = self.kubernetes.read_object(self.service_object)
         service_ip = service.spec.cluster_ip
-        log.info(service_ip)
         return service_ip
 
     def get_server_cert(self):

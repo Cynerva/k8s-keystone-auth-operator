@@ -1,2 +1,2 @@
 ops
-git+git://github.com/DomFleischmann/kubernetes-wrapper@3342fa5ddcfa0029b3162c27b4fff575f4d52e3b#egg=kubernetes-wrapper
+git+git://github.com/Cynerva/kubernetes-wrapper@73452714bdfcd53c3d23cf26cef1077d295c966f#egg=kubernetes-wrapper
