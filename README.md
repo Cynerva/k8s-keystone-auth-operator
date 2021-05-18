@@ -27,7 +27,7 @@ juju relate k8s-keystone-auth admin/my-keystone-model.keystone
 
 Obtain the k8s-keystone-auth-webhook service IP:
 ```
-kubectl get svc -n my-k8s-keystone-auth-model
+kubectl get svc -n my-k8s-keystone-auth-model k8s-keystone-auth-webhook
 ```
 
 Create a kubeconfig that points to the k8s-keystone-auth-webhook service IP:
