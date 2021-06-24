@@ -3,6 +3,9 @@
 This operator deploys k8s-keystone-auth, a service that makes it possible to
 integrate Kubernetes with Keystone for authentication and authorization.
 
+This is an early proof-of-concept implementation and is not currently
+recommended for use in production.
+
 ## Getting started
 
 Start by deploying k8s-keystone-auth into a Kubernetes model:
