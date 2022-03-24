@@ -1,2 +1,2 @@
 ops
-git+git://github.com/DomFleischmann/kubernetes-rapper@f7e516d50fb28e7c4b45f258046aa9884ddaddf1#egg=kubernetes-rapper
+git+https://github.com/canonical/kubernetes-rapper
